@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="AndyKazma">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<title>Kalkulator rachunku enegia</title>
+</head>
+<body>
+    <div class="container">
+        <label>Operator OSD</label>
+        <div>
+            <select id="company" class="form-control" >
+                    <option selected="selected">Wybierz firmę OSD</option>
+                    <option value="ENEA">ENEA</option>
+                    <option value="ENERGA">ENERGA</option>
+                    <option value="RWE">INNOGY RWE</option>
+                    <option value="PGE">PGE</option>
+                    <option value="TAURON">TAURON</option>
+            </select>
+        </div>
+        <br />
+        <label>Taryfa</label>
+        <div>
+            <select id="enTaryfa" class="form-control" >
+                    <option selected="selected">Wybierz taryfę</option> 
+            </select>
+        </div>
+        <br/>
+        <label>Moc umowna</label>
+        <div>
+            <select id="enMoc" class="form-control" >
+                <option selected="selected">Wybierz Moc Umowną (kW)</option>              
+            </select>
+        </div>
+        <br/>
+        <label for='usage'>Wprowadź zużycie miesięczne (pierwsza strefa w kWh)</label>
+        <input type="text" id="usage" class="form-control" value="0">
+        <label for='usage' class="hide2">zużycie miesięczne noc/pozaszczyt (kWh)</label>        
+        <input type="text" id="usage2" class="form-control" value="0">
+        <label for='usage' class="hide3">zużycie miesięczne pozostałe godziny (kWh)</label> 
+        <input type="text" id="usage3" class="form-control" value="0">
+        <br/>
+        <br/>
+        <input type="submit" id="submit" value="Policz">
+        <br/>
+         <br/>
+        <div>
+            <table id="resultTable" class="table table-hover"></table>
+        </div>
+    </div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>

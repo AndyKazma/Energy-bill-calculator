@@ -1,0 +1,6 @@
+.total {
+	font-weight: bold;
+}
+.hide2, .hide3, #usage2, #usage3 {
+	display: none;
+}
