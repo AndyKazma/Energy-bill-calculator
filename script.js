@@ -5,8 +5,6 @@ var eCompanies = {
   'ENERGA':['Wybierz taryfę', 'C11', 'C12a', 'C12b', 'C12w', 'C21', 'C22a', 'C22b', 'C23', 'B11', 'B21', 'B22', 'B23'],
   'RWE':['Wybierz taryfę', 'C11', 'C12a', 'C12b', 'C21', 'C22a', 'C22b', 'C23', 'B21', 'B22', 'B23'],
   }
-var eMocLow = [5, 10, 15, 20, 25, 30, 35];     
-var eMocHigh = [40, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]; 
 
 var C11 = {
   PGE:[C11,379.40,21,3.10,0.85,0.17,0.0129,5.1,0.00251],
@@ -101,15 +99,6 @@ jQuery(function($) {
   $('#enTaryfa').change(function () {
     $('#enMoc').empty();
     var Taryfa = $(this).val();
-    if (Taryfa == 'C11' || Taryfa == 'C12a' ||  Taryfa == 'C12b' ||  Taryfa == 'C12n' ||  Taryfa == 'C12w' ||  Taryfa == 'C13') {
-    for (var i=0;i<eMocLow.length;i++){
-       $('<option/>').val(eMocLow[i]).html(eMocLow[i]).appendTo('#enMoc');
-      }
-      } else {
-      for (var i=0;i<eMocHigh.length;i++){
-        $('<option/>').val(eMocHigh[i]).html(eMocHigh[i]).appendTo('#enMoc');
-        }
-      }
 
   if (Taryfa == 'C11' || Taryfa == 'C21' ||  Taryfa == 'B11' ||  Taryfa == 'B21')
   {
@@ -267,18 +256,18 @@ switch (taryfaSel) {
   }
   else if (taryfaSel == 'C12a' || taryfaSel == 'C22a' ||  taryfaSel == 'B22' || taryfaSel == 'C12b' || taryfaSel == 'C12n' ||  taryfaSel == 'C12w' || taryfaSel == 'C22b')
   {
-    $("#resultTable").append("<tr><td>Zużycie miesięczne</td><td>" + usageSel + " kWh/m-c</td><td></td></tr>");
-    $("#resultTable").append("<tr><td>Zużycie miesięczne</td><td>" + usageSel2 + " kWh/m-c</td><td></td></tr>");    
+    $("#resultTable").append("<tr><td>Zużycie miesięczne I</td><td>" + usageSel + " kWh/m-c</td><td></td></tr>");
+    $("#resultTable").append("<tr><td>Zużycie miesięczne II</td><td>" + usageSel2 + " kWh/m-c</td><td></td></tr>");    
     $("#resultTable").append("<tr class='info'><td>Za Energię</td><td>Stawka (netto)</td><td>Kwota (netto)</td></tr>");
-    $("#resultTable").append("<tr><td>Za Energię czynną (zł/Mwh)</td><td>" + myArray[1].toFixed(2) + "</td><td>" + zaCzynna.toFixed(2) + "</td></tr>");
-    $("#resultTable").append("<tr><td>Za Energię czynną (zł/Mwh)</td><td>" + myArray[2].toFixed(2) + "</td><td>" + zaCzynna2.toFixed(2) + "</td></tr>");     
+    $("#resultTable").append("<tr><td>Za Energię czynną I (zł/Mwh)</td><td>" + myArray[1].toFixed(2) + "</td><td>" + zaCzynna.toFixed(2) + "</td></tr>");
+    $("#resultTable").append("<tr><td>Za Energię czynną II (zł/Mwh)</td><td>" + myArray[2].toFixed(2) + "</td><td>" + zaCzynna2.toFixed(2) + "</td></tr>");     
     $("#resultTable").append("<tr><td>Opłata handlowa (zł/mc)</td><td>" + myArray[3].toFixed(2) + "</td><td>" + zaHandlowa.toFixed(2) + "</td></tr>");   
     $("#resultTable").append("<tr class='total'><td>Łącznie za Energię</td><td></td><td>" + totalEc.toFixed(2) + "</td></tr>");
     $("#resultTable").append("<tr class='info'><td>Za Dystrybucję</td><td></td><td></td></tr>");
     $("#resultTable").append("<tr><td>1. Składnik stały stawki sieciowej (zł/kW/m-c)</td><td>" + myArray[4].toFixed(2) + "</td><td>" + zaSss1.toFixed(2) + "</td></tr>"); 
     $("#resultTable").append("<tr><td>2. Stawka opłaty przejściowej (zł/kW/m-c)</td><td>" + myArray[5].toFixed(2) + "</td><td>" + zaSop2.toFixed(2) + "</td></tr>"); 
-    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej (zł/kWh)</td><td>" + myArray[6].toFixed(4) + "</td><td>" + zaSop3.toFixed(2) + "</td></tr>"); 
-    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej (zł/kWh)</td><td>" + myArray[7].toFixed(4) + "</td><td>" + zaSop32.toFixed(2) + "</td></tr>");     
+    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej I (zł/kWh)</td><td>" + myArray[6].toFixed(4) + "</td><td>" + zaSop3.toFixed(2) + "</td></tr>"); 
+    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej II (zł/kWh)</td><td>" + myArray[7].toFixed(4) + "</td><td>" + zaSop32.toFixed(2) + "</td></tr>");     
     $("#resultTable").append("<tr><td>4. Stawka jakościowa (zł/kWh)</td><td>" + myArray[8].toFixed(4) + "</td><td>" + zaZss4.toFixed(2) + "</td></tr>"); 
     $("#resultTable").append("<tr><td>5. Stawka opłaty abonamentowej (cykl jednomiesięczny)</td><td>" + myArray[9].toFixed(2) + "</td><td>" + zaZoa5.toFixed(2) + "</td></tr>"); 
     $("#resultTable").append("<tr><td>Stawka opłaty OZE (2,51 zł/MWh)</td><td>" + myArray[10].toFixed(4) + "</td><td>" + zaOZE6.toFixed(2) + "</td></tr>"); 
@@ -292,17 +281,17 @@ switch (taryfaSel) {
     $("#resultTable").append("<tr><td>Zużycie miesięczne</td><td>" + usageSel2 + " kWh/m-c</td><td></td></tr>");
     $("#resultTable").append("<tr><td>Zużycie miesięczne</td><td>" + usageSel3 + " kWh/m-c</td><td></td></tr>");    
     $("#resultTable").append("<tr class='info'><td>Za Energię</td><td>Stawka (netto)</td><td>Kwota (netto)</td></tr>");
-    $("#resultTable").append("<tr><td>Za Energię czynną (zł/Mwh)</td><td>" + myArray[1].toFixed(2) + "</td><td>" + zaCzynna.toFixed(2) + "</td></tr>"); 
-    $("#resultTable").append("<tr><td>Za Energię czynną (zł/Mwh)</td><td>" + myArray[2].toFixed(2) + "</td><td>" + zaCzynna2.toFixed(2) + "</td></tr>");
-    $("#resultTable").append("<tr><td>Za Energię czynną (zł/Mwh)</td><td>" + myArray[3].toFixed(2) + "</td><td>" + zaCzynna3.toFixed(2) + "</td></tr>");    
+    $("#resultTable").append("<tr><td>Za Energię czynną I (zł/Mwh)</td><td>" + myArray[1].toFixed(2) + "</td><td>" + zaCzynna.toFixed(2) + "</td></tr>"); 
+    $("#resultTable").append("<tr><td>Za Energię czynną II (zł/Mwh)</td><td>" + myArray[2].toFixed(2) + "</td><td>" + zaCzynna2.toFixed(2) + "</td></tr>");
+    $("#resultTable").append("<tr><td>Za Energię czynną III (zł/Mwh)</td><td>" + myArray[3].toFixed(2) + "</td><td>" + zaCzynna3.toFixed(2) + "</td></tr>");    
     $("#resultTable").append("<tr><td>Opłata handlowa (zł/mc)</td><td>" + myArray[4].toFixed(2) + "</td><td>" + zaHandlowa.toFixed(2) + "</td></tr>");
     $("#resultTable").append("<tr class='total'><td>Łącznie za Energię</td><td></td><td>" + totalEc.toFixed(2) + "</td></tr>");   
     $("#resultTable").append("<tr class='info'><td>Za Dystrybucję</td><td></td><td></td></tr>");
     $("#resultTable").append("<tr><td>1. Składnik stały stawki sieciowej (zł/kW/m-c)</td><td>" + myArray[5].toFixed(2) + "</td><td>" + zaSss1.toFixed(2) + "</td></tr>"); 
     $("#resultTable").append("<tr><td>2. Stawka opłaty przejściowej (zł/kW/m-c)</td><td>" + myArray[6].toFixed(2) + "</td><td>" + zaSop2.toFixed(2) + "</td></tr>"); 
-    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej (zł/kWh)</td><td>" + myArray[7].toFixed(4) + "</td><td>" + zaSop3.toFixed(2) + "</td></tr>"); 
-    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej (zł/kWh)</td><td>" + myArray[8].toFixed(4) + "</td><td>" + zaSop32.toFixed(2) + "</td></tr>");
-    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej (zł/kWh)</td><td>" + myArray[9].toFixed(4) + "</td><td>" + zaSop33.toFixed(2) + "</td></tr>");    
+    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej I (zł/kWh)</td><td>" + myArray[7].toFixed(4) + "</td><td>" + zaSop3.toFixed(2) + "</td></tr>"); 
+    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej II (zł/kWh)</td><td>" + myArray[8].toFixed(4) + "</td><td>" + zaSop32.toFixed(2) + "</td></tr>");
+    $("#resultTable").append("<tr><td>3. Składnik zmienny stawki sieciowej III (zł/kWh)</td><td>" + myArray[9].toFixed(4) + "</td><td>" + zaSop33.toFixed(2) + "</td></tr>");    
     $("#resultTable").append("<tr><td>4. Stawka jakościowa (zł/kWh)</td><td>" + myArray[10].toFixed(4) + "</td><td>" + zaZss4.toFixed(2) + "</td></tr>"); 
     $("#resultTable").append("<tr><td>5. Stawka opłaty abonamentowej (cykl jednomiesięczny)</td><td>" + myArray[11].toFixed(2) + "</td><td>" + zaZoa5.toFixed(2) + "</td></tr>"); 
     $("#resultTable").append("<tr><td>Stawka opłaty OZE (2,51 zł/MWh)</td><td>" + myArray[12].toFixed(4) + "</td><td>" + zaOZE6.toFixed(2) + "</td></tr>"); 
