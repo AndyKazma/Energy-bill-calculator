@@ -209,8 +209,8 @@ switch (taryfaSel) {
     var zaHandlowa = parseFloat(myArray[3]);
     var zaSss1 = parseFloat(myArray[4]* parseFloat(mocSel));
     var zaSop2 = parseFloat(myArray[5]* parseFloat(mocSel)); 
-    var zaSop3 = parseFloat(myArray[6]* parseFloat(usageSelTotal));
-    var zaSop32 = parseFloat(myArray[7]* parseFloat(usageSelTotal));    
+    var zaSop3 = parseFloat(myArray[6]* parseFloat(usageSel));
+    var zaSop32 = parseFloat(myArray[7]* parseFloat(usageSel2));    
     var zaZss4 = parseFloat(myArray[8]* parseFloat(usageSelTotal));
     var zaZoa5 = parseFloat(myArray[9]);
     var zaOZE6 = parseFloat(myArray[10]* parseFloat(usageSelTotal));
@@ -227,9 +227,9 @@ switch (taryfaSel) {
     var zaHandlowa = parseFloat(myArray[4]);
     var zaSss1 = parseFloat(myArray[5]* parseFloat(mocSel));
     var zaSop2 = parseFloat(myArray[6]* parseFloat(mocSel)); 
-    var zaSop3 = parseFloat(myArray[7]* parseFloat(usageSelTotal));
-    var zaSop32 = parseFloat(myArray[8]* parseFloat(usageSelTotal)); 
-    var zaSop33 = parseFloat(myArray[9]* parseFloat(usageSelTotal));       
+    var zaSop3 = parseFloat(myArray[7]* parseFloat(usageSel));
+    var zaSop32 = parseFloat(myArray[8]* parseFloat(usageSel2)); 
+    var zaSop33 = parseFloat(myArray[9]* parseFloat(usageSel3));       
     var zaZss4 = parseFloat(myArray[10]* parseFloat(usageSelTotal));
     var zaZoa5 = parseFloat(myArray[11]);
     var zaOZE6 = parseFloat(myArray[12]* parseFloat(usageSelTotal));
