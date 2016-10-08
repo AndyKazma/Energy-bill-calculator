@@ -4,3 +4,11 @@
 .hide2, .hide3, #usage2, #usage3 {
 	display: none;
 }
+.btn-primary {
+    background-color: #EB5A95 !important;
+    border-color: #E4005C !important;
+   }
+.btn-primary:hover {
+    background-color: #E4005C !important;
+    border-color: #E4005C !important;
+   }
